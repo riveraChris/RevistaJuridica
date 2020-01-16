@@ -5,6 +5,7 @@ namespace RevistaJuridica.Models
 {
     public class Event
     {
+        [ExplicitKey]
         public long EventId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
