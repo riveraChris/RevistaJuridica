@@ -1,4 +1,4 @@
-﻿@model RevistaJuridica.Models.Event
+﻿@model RevistaJuridica.Models.Article
 
 @{
     Layout = null;
@@ -8,13 +8,14 @@
 
 <html>
 <head>
-    <title>New Event</title>
+    <title>Edit Article</title>
 </head>
 <body>
-    @using (Html.BeginForm("New", "Event", FormMethod.Post))
+    @using (Html.BeginForm("Edit", "Article", FormMethod.Post))
     {
         <fieldset>
-            <legend>Event</legend>
+            <legend>Article</legend>
+            <div>@Html.EditorFor(model => model.ArticleId)</div>
             <div>@Html.LabelFor(model => model.Name)</div>
             <div>@Html.EditorFor(model => model.Name)</div>
             <div>@Html.LabelFor(model => model.Description)</div>

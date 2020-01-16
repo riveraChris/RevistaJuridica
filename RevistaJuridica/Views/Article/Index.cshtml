@@ -1,4 +1,4 @@
-﻿@model List<RevistaJuridica.Models.Event>
+﻿@model List<RevistaJuridica.Models.Article>
 
 @{
     Layout = null;
@@ -8,21 +8,21 @@
 
 <html>
 <head>
-    <title>Events</title>
+    <title>Articles</title>
 </head>
 <body>
-    <h1>Events List</h1>
+    <h1>Article List</h1>
     <hr />
     <div style="text-align:right">
-        <a href="/Event/New">New Event</a>
+        <a href="/Article/New">New Article</a>
     </div>
     <table>
         <thead>
             <tr>
-                <td>Event</td>
+                <td>Article</td>
                 <td>Details</td>
                 <td>Date</td>
-                
+
             </tr>
         </thead>
         <tbody>
@@ -31,12 +31,12 @@
                 <tr>
                     <td><h5>@item.Name</h5></td>
                     <td>@item.Description</td>
-                    <td>@item.EventDate</td>
-                    <td>@Html.ActionLink("Edit", "Edit", new { id = item.EventId })</td>
-                    <td>@Html.ActionLink("Delete", "Delete", new { id = item.EventId })</td>
+                    <td>@item.ArticleDate</td>
+                    <td>@Html.ActionLink("Edit", "Edit", new { id = item.ArticleId })</td>
+                    <td>@Html.ActionLink("Delete", "Delete", new { id = item.ArticleId })</td>
                 </tr>
             }
         </tbody>
     </table>
-    </body>
+</body>
 </html>

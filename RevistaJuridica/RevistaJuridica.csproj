@@ -80,9 +80,9 @@
     <Folder Include="bin\" />
     <Folder Include="Repositories\" />
     <Folder Include="Views\Event\" />
+    <Folder Include="Views\Article\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -90,10 +90,12 @@
     <Compile Include="Repositories\EventRepository.cs" />
     <Compile Include="Models\EventModel.cs" />
     <Compile Include="Controllers\EventController.cs" />
+    <Compile Include="Repositories\ArticleRepository.cs" />
+    <Compile Include="Models\ArticleModel.cs" />
+    <Compile Include="Controllers\ArticleController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Web.config" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
@@ -103,6 +105,9 @@
     <Content Include="Views\Event\Index.cshtml" />
     <Content Include="Views\Event\Edit.cshtml" />
     <Content Include="Views\Event\New.cshtml" />
+    <Content Include="Views\Article\Index.cshtml" />
+    <Content Include="Views\Article\New.cshtml" />
+    <Content Include="Views\Article\Edit.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
