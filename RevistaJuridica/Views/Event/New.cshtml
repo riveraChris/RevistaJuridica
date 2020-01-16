@@ -1,0 +1,30 @@
+﻿@model RevistaJuridica.Models.Event
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>New Event</title>
+</head>
+<body>
+    @using (Html.BeginForm("New", "Event", FormMethod.Post))
+    {
+        <fieldset>
+            <legend>Event</legend>
+            <div>Model.EventId</div>
+            <div>@Html.LabelFor(model => model.Name)</div>
+            <div>@Html.EditorFor(model => model.Name)</div>
+            <div>@Html.LabelFor(model => model.Description)</div>
+            <div>@Html.EditorFor(model => model.Description)</div>
+            <hr />
+            <input type="submit" value="New Event" />
+        </fieldset>
+
+    }
+
+</body>
+</html>

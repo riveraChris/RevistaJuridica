@@ -1,0 +1,40 @@
+﻿@model List<RevistaJuridica.Models.Event>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Events</title>
+</head>
+<body>
+    <div style="text-align:right">
+        <a href="/Event/New">New Event</a>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <td>Event</td>
+                <td>Details</td>
+                <td>Date</td>
+                
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td><h5>@item.Name</h5></td>
+                    <td>@item.Description</td>
+                    <td>@item.EventDate</td>
+                    <td>@Html.ActionLink("Edit", "Edit", new { id = item.EventId })</td>
+                    <td>@Html.ActionLink("Delete", "Delete", new { id = item.EventId })</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    </body>
+</html>
