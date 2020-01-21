@@ -1,42 +1,23 @@
 ﻿@model List<RevistaJuridica.Models.Event>
 
-@{
-    Layout = null;
-}
+<div class="full-width-split__one">
+    <div class="full-width-split__inner">
+        <h2 class="headline headline--small-plus t-center" style="color:#024B25;">Próximos Eventos</h2>
+        @foreach (var item in Model)
+        {
+            <div class="event-summary">
+                <a class="event-summary__date t-center" href="#" style="background-color:#01803D;">
+                    <span class="event-summary__month">@item.EventDate.ToString("MMM")</span>
+                    <span class="event-summary__day">@item.EventDate.ToString("dd")</span>
+                </a>
+                <div class="event-summary__content" style="color:#01803D;">
+                    <h5 class="event-summary__title headline headline--tiny"><a href="#" style="color:#024B25;">@item.Name</a></h5>
+                    <p>@item.Description <a href="#" class="nu gray">Learn more</a></p>
+                </div>
+            </div>
+        }
 
-<!DOCTYPE html>
+        <p class="t-center no-margin"><a href="#" class="btn btn--blue" style="background-color:#01803D;">Ver Todos</a></p>
 
-<html>
-<head>
-    <title>Events</title>
-</head>
-<body>
-    <h1>Events List</h1>
-    <hr />
-    <div style="text-align:right">
-        <a href="/Event/New">New Event</a>
     </div>
-    <table>
-        <thead>
-            <tr>
-                <td>Event</td>
-                <td>Details</td>
-                <td>Date</td>
-                
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td><h5>@item.Name</h5></td>
-                    <td>@item.Description</td>
-                    <td>@item.EventDate</td>
-                    <td>@Html.ActionLink("Edit", "Edit", new { id = item.EventId })</td>
-                    <td>@Html.ActionLink("Delete", "Delete", new { id = item.EventId })</td>
-                </tr>
-            }
-        </tbody>
-    </table>
-    </body>
-</html>
+</div>

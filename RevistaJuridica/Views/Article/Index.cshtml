@@ -4,39 +4,23 @@
     Layout = null;
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <title>Articles</title>
-</head>
-<body>
-    <h1>Article List</h1>
-    <hr />
-    <div style="text-align:right">
-        <a href="/Article/New">New Article</a>
+<div class="full-width-split__two">
+    <div class="full-width-split__inner">
+        <h2 class="headline headline--small-plus t-center">Volúmenes Recientes</h2>
+        @foreach (var item in Model)
+        {
+            <div class="event-summary">
+                <a class="event-summary__date event-summary__date--beige t-center" href="#">
+                    <span class="event-summary__month">@item.ArticleDate.ToString("MMM")</span>
+                    <span class="event-summary__day">@item.ArticleDate.ToString("dd")</span>
+                </a>
+                <div class="event-summary__content">
+                    <h5 class="event-summary__title headline headline--tiny"><a href="#">@item.Name</a></h5>
+                    <p>@item.Description  <a href="#" class="nu gray">Read more</a></p>
+                </div>
+            </div>
+        }
+        <p class="t-center no-margin"><a href="#" class="btn btn--yellow">Ver Todos</a></p>
     </div>
-    <table>
-        <thead>
-            <tr>
-                <td>Article</td>
-                <td>Details</td>
-                <td>Date</td>
-
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td><h5>@item.Name</h5></td>
-                    <td>@item.Description</td>
-                    <td>@item.ArticleDate</td>
-                    <td>@Html.ActionLink("Edit", "Edit", new { id = item.ArticleId })</td>
-                    <td>@Html.ActionLink("Delete", "Delete", new { id = item.ArticleId })</td>
-                </tr>
-            }
-        </tbody>
-    </table>
-</body>
-</html>
+</div>        
+         

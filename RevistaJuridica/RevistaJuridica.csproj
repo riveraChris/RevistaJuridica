@@ -72,6 +72,7 @@
     <Reference Include="Dapper.Contrib">
       <HintPath>..\packages\Dapper.Contrib.2.0.30\lib\net461\Dapper.Contrib.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web.Http.WebHost" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\" />
@@ -81,6 +82,10 @@
     <Folder Include="Repositories\" />
     <Folder Include="Views\Event\" />
     <Folder Include="Views\Article\" />
+    <Folder Include="Resources\" />
+    <Folder Include="Views\Home\" />
+    <Folder Include="App_Data\" />
+    <Folder Include="App_Data\uploads\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
@@ -93,6 +98,7 @@
     <Compile Include="Repositories\ArticleRepository.cs" />
     <Compile Include="Models\ArticleModel.cs" />
     <Compile Include="Controllers\ArticleController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Web.config" />
@@ -108,6 +114,44 @@
     <Content Include="Views\Article\Index.cshtml" />
     <Content Include="Views\Article\New.cshtml" />
     <Content Include="Views\Article\Edit.cshtml" />
+    <Content Include="Resources\index.html" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Resources\interior-page.html" />
+    <Content Include="Resources\style.css" />
+    <Content Include="Resources\css\base\baseline.css" />
+    <Content Include="Resources\css\base\utility-classes.css" />
+    <Content Include="Resources\css\base\variables.css" />
+    <Content Include="Resources\css\modules\acf-map.css" />
+    <Content Include="Resources\css\modules\btn.css" />
+    <Content Include="Resources\css\modules\event-summary.css" />
+    <Content Include="Resources\css\modules\full-width-split.css" />
+    <Content Include="Resources\css\modules\generic-content.css" />
+    <Content Include="Resources\css\modules\headline.css" />
+    <Content Include="Resources\css\modules\hero-slider.css" />
+    <Content Include="Resources\css\modules\link-list.css" />
+    <Content Include="Resources\css\modules\login.css" />
+    <Content Include="Resources\css\modules\main-navigation.css" />
+    <Content Include="Resources\css\modules\metabox.css" />
+    <Content Include="Resources\css\modules\my-notes.css" />
+    <Content Include="Resources\css\modules\page-banner.css" />
+    <Content Include="Resources\css\modules\page-links.css" />
+    <Content Include="Resources\css\modules\post-item.css" />
+    <Content Include="Resources\css\modules\professor-card.css" />
+    <Content Include="Resources\css\modules\search-overlay.css" />
+    <Content Include="Resources\css\modules\shame.css" />
+    <Content Include="Resources\css\modules\site-footer.css" />
+    <Content Include="Resources\css\modules\site-header.css" />
+    <Content Include="Resources\css\style.css" />
+    <Content Include="Resources\images\apples.jpg" />
+    <Content Include="Resources\images\barksalot.jpg" />
+    <Content Include="Resources\images\bread.jpg" />
+    <Content Include="Resources\images\bus.jpg" />
+    <Content Include="Resources\images\library-hero.jpg" />
+    <Content Include="Resources\images\meowsalot.jpg" />
+    <Content Include="Resources\images\ocean.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\.DS_Store" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>

@@ -1,0 +1,121 @@
+﻿@{
+    Layout = null;
+}
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Revista Jurídica</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,300,400,400i,700,700i" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="Resources/style.css" />
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container">
+            <h1 class="school-logo-text float-left"><a href="#"><strong>Revista</strong> Jurídica UIPR</a></h1>
+            <span class="js-search-trigger site-header__search-trigger"><i class="fa fa-search" aria-hidden="true"></i></span>
+            <i class="site-header__menu-trigger fa fa-bars" aria-hidden="true"></i>
+            <div class="site-header__menu group">
+                <nav class="main-navigation">
+                    <ul>
+                        <li><a href="#">Conócenos</a></li>
+                        <li><a href="#">Volúmenes</a></li>
+                        <li><a href="#">Eventos</a></li>
+                        <li><a href="#">Contáctanos</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+        </div>
+    </header>
+
+    <div class="page-banner">
+        <div class="page-banner__bg-image" style="background-image: url(Resources/images/inter.jpg);"></div>
+        <div class="page-banner__content container t-center c-white">
+            <h1 class="headline headline--large"><strong>Revista</strong> Jurídica UIPR</h1>
+            <h2 class="headline headline--medium">Atrévete a Escribir</h2>
+            <h3 class="headline headline--small">Universidad Interamericana</h3>
+            <a href="#" class="btn btn--large btn--blue" style="background-color:#01803D;">Regístrate</a>
+        </div>
+    </div>
+    <div class="full-width-split group">
+        <!-- Events Section -->
+        @{
+            Html.RenderAction("Events");
+        }
+
+        <!-- Articles Section -->
+        @{
+            Html.RenderAction("Articles");
+        }
+
+    </div>
+
+    <div class="hero-slider">
+        <div class="hero-slider__slide" style="background-image: url(Resources/images/exalumnos.jpg);">
+            <div class="hero-slider__interior container">
+                <div class="hero-slider__overlay">
+                    <h2 class="headline headline--medium t-center">More Sections</h2>
+                    <p class="t-center">More Space for more content.</p>
+                    <p class="t-center no-margin"><a href="#" class="btn btn--blue" style="background-color:#01803D;">Learn more</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+
+        <div class="site-footer__inner container container--narrow">
+
+            <div class="group">
+
+                <div class="site-footer__col-one">
+                    <h1 class="school-logo-text school-logo-text--alt-color"><a href="#"><strong>Revistal</strong> Jurídica</a></h1>
+                    <p><a class="site-footer__link" href="#">(787)123-1234</a></p>
+                </div>
+
+                <div class="site-footer__col-two-three-group">
+                    <div class="site-footer__col-two">
+                        <h3 class="headline headline--small"></h3>
+                        <nav class="nav-list">
+                            <ul>
+                                <li><a href="#">Conócenos</a></li>
+                                <li><a href="#">Volúmenes</a></li>
+                                <li><a href="#">Eventos</a></li>
+                                <li><a href="#">Contáctanos</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <div class="site-footer__col-three">
+                        <h3 class="headline headline--small"></h3>
+                        <nav class="nav-list">
+                            <ul>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+                <div class="site-footer__col-four">
+                    <h3 class="headline headline--small">Síguenos</h3>
+                    <nav>
+                        <ul class="min-list social-icons-list group">
+                            <li><a href="#" class="social-color-facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="#" class="social-color-instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="js/scripts-bundled.js"></script>
+</body>
+</html>
+
+

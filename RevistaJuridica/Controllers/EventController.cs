@@ -5,7 +5,7 @@ using RevistaJuridica.EventRepositories;
 
 namespace RevistaJuridica.Controllers
 {
-    public class EventController : Controller
+    public class Event : Controller
     {
         private readonly EventRepository repo = new EventRepository();
 
@@ -21,7 +21,7 @@ namespace RevistaJuridica.Controllers
         }
 
         [HttpPost]
-        public ActionResult New(Event e)
+        public ActionResult New(Models.Event e)
         {
             e.EventDate = DateTime.Now;
 
@@ -38,16 +38,16 @@ namespace RevistaJuridica.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit(Event e)
+        public ActionResult Edit(Models.Event e)
         {
             repo.UpdateEvent(e);
      
             return RedirectToAction("Index");
         }
 
-        public ActionResult Delete(long id)
+        public ActionResult Delete(Models.Event e)
         {
-            repo.DeleteEvent(id);
+            repo.DeleteEvent(e);
 
             return RedirectToAction("Index");
         }

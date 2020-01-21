@@ -15,41 +15,34 @@ namespace RevistaJuridica.EventRepositories
     {
         private readonly IDbConnection _db = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString);
 
-        public List<Event> GetAllEvents()
-        { 
+        public IEnumerable<Event> GetAllEvents()
+        {
+            return _db.GetAll<Event>();
+        }
 
-            List<Event> e = _db.Query<Event>("select * from dbo.Event").ToList();
-
-            return e;
+        public IEnumerable<Event> GetTopEvents(int top)
+        {
+            return _db.Query<Event>("select top " + top + " * from dbo.Event order by EventDate DESC").ToList();
         }
 
         public Event GetEvent(long id)
         {
-      
-            Event e = _db.Query<Event>("select * from dbo.Event where EventId=" + id).FirstOrDefault();
-
-            return e;
+            return _db.Get<Event>(id);
         }
 
-        public void InsertEvent(Event e)
+        public long InsertEvent(Event e)
         {
-            string query = "insert into dbo.Event Values('" + e.Name + "','" + e.Description + "',cast('" + e.EventDate + "' as datetime))";
-
-            _db.Query(query);
+            return _db.Insert<Event>(e);
         }
 
         public void UpdateEvent(Event e)
         {
-            string query = "update dbo.Event set Name='" + e.Name + "',Description='" + e.Description + "',EventDate=getdate() where EventId=" + e.EventId;
-
-            _db.Query(query);
+            _db.Update<Event>(e);
         }
 
-        public void DeleteEvent(long id)
+        public void DeleteEvent(Event e)
         {
-            string query = "Delete from dbo.Event where EventId=" + id;
-
-            _db.Query(query);
+            _db.Delete<Event>(e);
         }
     }
 }

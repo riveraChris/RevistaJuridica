@@ -15,41 +15,37 @@ namespace RevistaJuridica.ArticleRepositories
     {
         private readonly IDbConnection _db = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString);
 
-        public List<Article> GetAllArticles()
+        public IEnumerable<Article> GetAllArticles()
         {
+            return _db.GetAll<Article>();
+        }
 
-            List<Article> e = _db.Query<Article>("select * from dbo.Article").ToList();
-
-            return e;
+        public IEnumerable<Article> GetTopArticles(int top)
+        {
+            return _db.Query<Article>("select top " + top + " * from dbo.Article order by ArticleDate DESC").ToList();
         }
 
         public Article GetArticle(long id)
         {
-
-            Article e = _db.Query<Article>("select * from dbo.Article where ArticleId=" + id).FirstOrDefault();
-
-            return e;
+            return _db.Get<Article>(id);
         }
 
-        public void InsertArticle(Article e)
+        public long InsertArticle(Article e)
         {
-            string query = "insert into dbo.Article Values('" + e.Name + "','" + e.Description + "',cast('" + e.ArticleDate + "' as datetime))";
-
-            _db.Query(query);
+           return _db.Insert<Article>(e);
         }
 
         public void UpdateArticle(Article e)
         {
-            string query = "update dbo.Article set Name='" + e.Name + "',Description='" + e.Description + "',ArticleDate=getdate() where ArticleId=" + e.ArticleId;
+            e.ArticleDate = DateTime.Now.Date;
+            
+            _db.Update<Article>(e);
 
-            _db.Query(query);
         }
 
-        public void DeleteArticle(long id)
+        public void DeleteArticle(Article e)
         {
-            string query = "Delete from dbo.Article where ArticleId=" + id;
-
-            _db.Query(query);
+            _db.Delete<Article>(e);
         }
     }
 }

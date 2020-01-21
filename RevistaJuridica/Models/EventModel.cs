@@ -3,6 +3,7 @@ using Dapper.Contrib.Extensions;
 
 namespace RevistaJuridica.Models
 {
+    [Table("Event")]
     public class Event
     {
         [ExplicitKey]

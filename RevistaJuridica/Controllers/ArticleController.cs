@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Web;
 using System.Web.Mvc;
 using RevistaJuridica.ArticleRepositories;
 using RevistaJuridica.Models;
@@ -38,16 +40,31 @@ namespace RevistaJuridica.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit(Article e)
+        public ActionResult Edit(Article e, HttpPostedFileBase file)
         {
+            
+            string theFileName = Path.GetFileName(file.FileName);
+            byte[] thePictureAsBytes = new byte[file.ContentLength];
+            using (BinaryReader theReader = new BinaryReader(file.InputStream))
+            {
+                thePictureAsBytes = theReader.ReadBytes(file.ContentLength);
+            }
+            string thePictureDataAsString = Convert.ToBase64String(thePictureAsBytes);
+            
+
+            //Update fields
+            e.ArticleImage = thePictureAsBytes;
+
+            //file.InputStream.Read(e.ArticleImage, 0, file.ContentLength);
+
             repo.UpdateArticle(e);
 
             return RedirectToAction("Index");
         }
 
-        public ActionResult Delete(long id)
+        public ActionResult Delete(Models.Article e)
         {
-            repo.DeleteArticle(id);
+            repo.DeleteArticle(e);
 
             return RedirectToAction("Index");
         }

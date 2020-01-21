@@ -13,15 +13,15 @@
 <body>
     @using (Html.BeginForm("New", "Article", FormMethod.Post))
     {
-        <fieldset>
-            <legend>Article</legend>
-            <div>@Html.LabelFor(model => model.Name)</div>
-            <div>@Html.EditorFor(model => model.Name)</div>
-            <div>@Html.LabelFor(model => model.Description)</div>
-            <div>@Html.EditorFor(model => model.Description)</div>
-            <hr />
-            <input type="submit" value="Save" />
-        </fieldset>
+    <fieldset>
+        <legend>Article</legend>
+        <div>@Html.LabelFor(model => model.Name)</div>
+        <div>@Html.EditorFor(model => model.Name)</div>
+        <div>@Html.LabelFor(model => model.Description)</div>
+        <div>@Html.EditorFor(model => model.Description)</div>        
+        <hr />
+        <input type="submit" value="Save" />
+    </fieldset>
 
     }
 
