@@ -25,14 +25,12 @@ namespace RevistaJuridica.Controllers
         [HttpPost]
         public ActionResult New(Article e)
         {
-            e.ArticleDate = DateTime.Now;
-
             repo.InsertArticle(e);
 
             return RedirectToAction("Index");
         }
 
-        public ActionResult Edit(long id)
+        public ActionResult Details(long id)
         {
             var e = repo.GetArticle(id);
 
@@ -40,23 +38,8 @@ namespace RevistaJuridica.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit(Article e, HttpPostedFileBase file)
+        public ActionResult Edit(Article e)
         {
-            
-            string theFileName = Path.GetFileName(file.FileName);
-            byte[] thePictureAsBytes = new byte[file.ContentLength];
-            using (BinaryReader theReader = new BinaryReader(file.InputStream))
-            {
-                thePictureAsBytes = theReader.ReadBytes(file.ContentLength);
-            }
-            string thePictureDataAsString = Convert.ToBase64String(thePictureAsBytes);
-            
-
-            //Update fields
-            e.ArticleImage = thePictureAsBytes;
-
-            //file.InputStream.Read(e.ArticleImage, 0, file.ContentLength);
-
             repo.UpdateArticle(e);
 
             return RedirectToAction("Index");

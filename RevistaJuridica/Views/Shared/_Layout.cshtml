@@ -1,10 +1,94 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>@ViewBag.Title</title>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Revista Jurídica</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,300,400,400i,700,700i" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/Resources/style.css" />
+    <link rel="stylesheet" type="text/css" href="~/Resources/DataTables/datatables.min.css" />
 </head>
 <body>
-	@RenderBody()
+    <header class="site-header">
+        <div class="container">
+            <h1 class="school-logo-text float-left"><a href="@Url.Action("Index", "Home")"><strong>Revista</strong> Jurídica UIPR</a></h1>
+            <span class="js-search-trigger site-header__search-trigger"><i class="fa fa-search" aria-hidden="true"></i></span>
+            <i class="site-header__menu-trigger fa fa-bars" aria-hidden="true"></i>
+            <div class="site-header__menu group">
+                <nav class="main-navigation">
+                    <ul>
+                        <li>@Html.ActionLink("Conócenos", "Index", "About")</li>
+                        <li>@Html.ActionLink("Volúmenes", "Index", "Edition")</li>
+                        <li><a href="#">Convocatorías</a></li>
+                        <li>@Html.ActionLink("Eventos", "Index", "Event")</li>
+                        <li><a href="#">Contáctanos</a></li>
+                        <li><a href="#">Materiales</a></li>
+                        <li><a href="#">Galería</a></li>
+                        <li><a href="#">Someter Artículo</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+        </div>
+    </header>
+
+    @RenderBody()
+
+    <footer class="site-footer">
+
+        <div class="site-footer__inner container container--narrow">
+
+            <div class="group">
+
+                <div class="site-footer__col-one">
+                    <h1 class="school-logo-text school-logo-text--alt-color"><a href="#"><strong>Revista</strong> Jurídica</a></h1>
+                    <p>
+                        <a class="site-footer__link" href="#">(787)751-1912 #2078</a>
+                        <a class="site-footer__link" href="#">(787)751-1912 #2078</a>
+                    </p>
+                </div>
+
+                <div class="site-footer__col-two-three-group">
+                    <div class="site-footer__col-two">
+                        <h3 class="headline headline--small"></h3>
+                        <nav class="nav-list">
+                            <ul>
+                                <li>@Html.ActionLink("Conócenos", "Index", "About")</li>
+                                <li>@Html.ActionLink("Volúmenes", "Index", "Article")</li>
+                                <li>@Html.ActionLink("Eventos", "Index", "Event")</li>
+                                <li><a href="#">Contáctanos</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <div class="site-footer__col-three">
+                        <h3 class="headline headline--small"></h3>
+                        <nav class="nav-list">
+                            <ul>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+                <div class="site-footer__col-four">
+                    <h3 class="headline headline--small">Síguenos</h3>
+                    <nav>
+                        <ul class="min-list social-icons-list group">
+                            <li><a href="#" class="social-color-facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="#" class="social-color-instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://kit.fontawesome.com/b29dee2e36.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="~/Resources/js/scripts-bundled.js"></script>
+    <script type="text/javascript" src="~/Resources/DataTables/datatables.min.js"></script>
 </body>
 </html>

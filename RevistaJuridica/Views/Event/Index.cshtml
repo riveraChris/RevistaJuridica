@@ -1,8 +1,21 @@
 ﻿@model List<RevistaJuridica.Models.Event>
 
-<div class="full-width-split__one">
-    <div class="full-width-split__inner">
-        <h2 class="headline headline--small-plus t-center" style="color:#024B25;">Próximos Eventos</h2>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<body>
+    <div class="page-banner">
+        <div class="page-banner__bg-image" style="background-image: url(Resources/images/ocean.jpg);"></div>
+        <div class="page-banner__content container container--narrow">
+            <h1 class="page-banner__title">Eventos</h1>
+            <div class="page-banner__intro">
+                <p>Se parte de nuestras actividades.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container container--narrow page-section">
+
         @foreach (var item in Model)
         {
             <div class="event-summary">
@@ -15,9 +28,13 @@
                     <p>@item.Description <a href="#" class="nu gray">Learn more</a></p>
                 </div>
             </div>
+            <br />
+            <hr />
+            <br />
         }
-
-        <p class="t-center no-margin"><a href="#" class="btn btn--blue" style="background-color:#01803D;">Ver Todos</a></p>
-
     </div>
-</div>
+</body>
+
+
+
+

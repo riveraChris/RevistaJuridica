@@ -1,0 +1,23 @@
+﻿@model List<RevistaJuridica.Models.Event>
+
+<div class="full-width-split__one">
+    <div class="full-width-split__inner">
+        <h2 class="headline headline--small-plus t-center" style="color:#024B25;">Próximos Eventos</h2>
+        @foreach (var item in Model)
+        {
+            <div class="event-summary">
+                <a class="event-summary__date t-center" href="#" style="background-color:#01803D;">
+                    <span class="event-summary__month">@item.EventDate.ToString("MMM")</span>
+                    <span class="event-summary__day">@item.EventDate.ToString("dd")</span>
+                </a>
+                <div class="event-summary__content" style="color:#01803D;">
+                    <h5 class="event-summary__title headline headline--tiny"><a href="#" style="color:#024B25;">@item.Name</a></h5>
+                    <p>@item.Description <a href="#" class="nu gray">Learn more</a></p>
+                </div>
+            </div>
+        }
+
+        <p class="t-center no-margin"><a href="@Url.Action("Index", "Event")" class="btn btn--blue" style="background-color:#01803D;">Ver Todos</a></p>
+
+    </div>
+</div>

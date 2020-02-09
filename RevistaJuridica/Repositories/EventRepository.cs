@@ -22,7 +22,7 @@ namespace RevistaJuridica.EventRepositories
 
         public IEnumerable<Event> GetTopEvents(int top)
         {
-            return _db.Query<Event>("select top " + top + " * from dbo.Event order by EventDate DESC").ToList();
+            return _db.Query<Event>("sp_GetLastestEvents @Num=" + top).ToList();
         }
 
         public Event GetEvent(long id)

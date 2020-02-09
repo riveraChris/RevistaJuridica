@@ -12,7 +12,7 @@ namespace RevistaJuridica.Controllers
     public class HomeController : Controller
     {
         private readonly EventRepository eventRepo = new EventRepository();
-        private readonly ArticleRepository articRepo = new ArticleRepository();
+        private readonly ArticleRepository articleRepo = new ArticleRepository();
 
         public ActionResult Index()
         {
@@ -22,13 +22,13 @@ namespace RevistaJuridica.Controllers
         [ChildActionOnly]
         public ActionResult Events()
         {
-            return PartialView("~/Views/Event/Index.cshtml", eventRepo.GetTopEvents(2));
+            return PartialView("~/Views/Event/_Events.cshtml", eventRepo.GetTopEvents(3));
         }
 
         [ChildActionOnly]
         public ActionResult Articles()
         {
-            return PartialView("~/Views/Article/Index.cshtml", articRepo.GetTopArticles(2));
+            return PartialView("~/Views/Article/_Articles.cshtml", articleRepo.GetDefaultArticles()) ;
         }
     }
 }

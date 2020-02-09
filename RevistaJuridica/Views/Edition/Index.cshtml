@@ -1,0 +1,71 @@
+﻿@model List<RevistaJuridica.Models.Edition>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<body>
+    <div class="page-banner">
+        <div class="page-banner__bg-image" style="background-image: url(~/Resources/images/Diploma.jpg);"></div>
+        <div class="page-banner__content container container--narrow">
+            <h1 class="page-banner__title">Volúmenes</h1>
+
+        </div>
+    </div>
+
+    <div class="container container--narrow page-section">
+        <div id="accordion">
+            @foreach (var edition in Model)
+            {
+                <div class="card">
+                    <div class="card-header" id="heading-@edition.Title">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapse-@edition.Title" aria-expanded="false" aria-controls="collapse-@edition.Title" style="color:darkgreen;">
+                                <h4>Volumen: @edition.Title - @edition.Year</h4>
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapse-@edition.Title" class="collapse" aria-labelledby="heading-@edition.Title" data-parent="#accordion">
+                        @{ if (@edition.Numbers != null)
+                            {
+                                foreach (var number in edition.Numbers)
+                                {
+                                    <div class="card-body">
+                                        <h5>Número: @number.Title - @number.SubTitle</h5>
+                                        <table class="table table-sm">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col"></th>
+                                                    <th scope="col">Artículo</th>
+                                                    <th scope="col">Descrpción</th>
+                                                    <th scope="col">Autor</th>
+                                                    <th scope="col">#Páginas</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @{
+                                                    foreach (var article in number.Articles)
+                                                    {
+                                                        <tr>
+                                                            <th scope="row">
+                                                            <a href="#"><span><i class="fas fa-file-pdf"></i></span></a>
+                                                            </th>
+                                                            <td>@article.Title</td>
+                                                            <td>@article.Description</td>
+                                                            <td>@article.Author</td>
+                                                            <td>@article.Pages</td>
+                                                        </tr>
+                                                    }
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                }
+                            }
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</body>
+

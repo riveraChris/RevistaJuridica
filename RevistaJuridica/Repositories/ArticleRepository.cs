@@ -20,9 +20,9 @@ namespace RevistaJuridica.ArticleRepositories
             return _db.GetAll<Article>();
         }
 
-        public IEnumerable<Article> GetTopArticles(int top)
+        public IEnumerable<Article> GetDefaultArticles()
         {
-            return _db.Query<Article>("select top " + top + " * from dbo.Article order by ArticleDate DESC").ToList();
+            return _db.Query<Article>("sp_GetDefaultArticles").ToList();
         }
 
         public Article GetArticle(long id)
@@ -32,20 +32,17 @@ namespace RevistaJuridica.ArticleRepositories
 
         public long InsertArticle(Article e)
         {
-           return _db.Insert<Article>(e);
+           return _db.Insert(e);
         }
 
         public void UpdateArticle(Article e)
-        {
-            e.ArticleDate = DateTime.Now.Date;
-            
-            _db.Update<Article>(e);
-
+        {   
+            _db.Update(e);
         }
 
         public void DeleteArticle(Article e)
         {
-            _db.Delete<Article>(e);
+            _db.Delete(e);
         }
     }
 }

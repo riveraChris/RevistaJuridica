@@ -1,0 +1,30 @@
+﻿@model List<RevistaJuridica.Models.Article>
+
+@{
+    Layout = null;
+}
+
+<div class="full-width-split__two">
+    <div class="full-width-split__inner">
+        <h2 class="headline headline--small-plus t-center">Artículos Recientes</h2>
+        @foreach (var item in Model)
+        {
+            <div class="event-summary">
+                <a class="event-summary__date event-summary__date--beige t-center" href="#">
+                    <span style="font-size: 45px;">
+                        <i class="fas fa-file-pdf"></i>
+                    </span>
+                </a>
+                <div class="event-summary__content">
+                    <h5 class="event-summary__title headline headline--tiny"><a href="#">@item.Title</a></h5>
+                    <p>@item.Description <br />
+                        Por: @item.Author
+                    </p>
+
+                </div>
+            </div>
+        }
+        <p class="t-center no-margin"><a href="@Url.Action("Index", "Article")" class="btn btn--yellow">Ver Todos</a></p>
+    </div>
+</div>        
+         
