@@ -1,57 +1,78 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<body>
-    <div class="page-banner">
-        <div class="page-banner__bg-image" style="background-image: url(Resources/images/inter.jpg);"></div>
-        <div class="page-banner__content container t-center c-white">
-            <h1 class="headline headline--large"><strong>Revista</strong> Jurídica UIPR</h1>
-            <h2 class="headline headline--medium">Atrévete a Escribir</h2>
-            <h3 class="headline headline--small">Universidad Interamericana</h3>
-        </div>
-    </div>
-    <div class="full-width-split group">
-        <!-- Events Section -->
-        @{
-            Html.RenderAction("Events");
-        }
-
-        <!-- Articles Section -->
-        @{
-            Html.RenderAction("Articles");
-        }
-
-    </div>
-
-    <div class="hero-slider">
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="hero-slider__slide" style="background-image: url(Resources/images/bus.jpg);">
-                        <div class="hero-slider__interior container">
-                            <div class="hero-slider__overlay">
-                                <h2 class="headline headline--medium t-center">Free Transportation</h2>
-                                <p class="t-center">All students have free unlimited bus fare.</p>
-                                <p class="t-center no-margin"><a href="#" class="btn btn--blue">Learn more</a></p>
-                            </div>
-                        </div>
+    <body>
+        <div class="hero-slider">
+            <div class="hero-slider__slide" style="background-image: url(Resources/images/Ca1.png);">
+                <div class="hero-slider__interior container">
+                    <div class="hero-slider__overlay" style="width:90%; text-align:center;">
+                        <h1 class="headline headline--large"><strong>Revista</strong> Jurídica UIPR</h1>
+                        <h2 class="headline headline--medium">Atrévete a Escribir</h2>
+                        <h3 class="headline headline--small">Universidad Interamericana</h3>
                     </div>
                 </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="~/Resources/images/ocean.jpg" alt="Second slide">
+            </div>
+            <div class="hero-slider__slide" style="background-image: url(Resources/images/Ca2.jpg);">
+                <div class="hero-slider__interior container">
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
                 </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="~/Resources/images/apples.jpg" alt="Third slide">
+            </div>
+            <div class="hero-slider__slide" style="background-image: url(Resources/images/Ca3.jpg);">
+                <div class="hero-slider__interior container">
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
                 </div>
             </div>
         </div>
-    </div>
-</body>
+        <div class="full-width-split group">
+            <!-- Events Section -->
+            @{
+                Html.RenderAction("Events");
+            }
+
+            <!-- Articles Section -->
+            @{
+                Html.RenderAction("Articles");
+            }
+
+        </div>
+        <div class="page-banner">
+            <div class="page-banner__bg-image" style="background-image: url(Resources/images/library-hero.jpg);"></div>
+            <div class="page-banner__content container t-center c-white">
+                <h1 class="headline headline--large">Facultad de Derecho</h1>
+                <h2 class="headline headline--medium">Se parte de nosotros</h2>
+                <br />
+                <a href="#" class="btn btn--large btn--blue">Registrate</a>
+
+            </div>
+        </div>
+
+    </body>
 
 
 

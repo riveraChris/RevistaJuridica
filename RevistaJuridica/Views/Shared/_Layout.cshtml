@@ -11,17 +11,15 @@
     <link rel="stylesheet" type="text/css" href="~/Resources/DataTables/datatables.min.css" />
 </head>
 <body>
-    <header class="site-header">
+    <header class="site-header" style="background-color:rgba(0, 0, 0, .68);">
         <div class="container">
-            <h1 class="school-logo-text float-left"><a href="@Url.Action("Index", "Home")"><strong>Revista</strong> Jurídica UIPR</a></h1>
-            <span class="js-search-trigger site-header__search-trigger"><i class="fa fa-search" aria-hidden="true"></i></span>
-            <i class="site-header__menu-trigger fa fa-bars" aria-hidden="true"></i>
+            <h1 class="school-logo-text float-left"><a href="@Url.Action("Index", "Home")"><strong>Revista</strong> Jurídica UIPR</a></h1> 
             <div class="site-header__menu group">
                 <nav class="main-navigation">
                     <ul>
                         <li>@Html.ActionLink("Conócenos", "Index", "About")</li>
                         <li>@Html.ActionLink("Volúmenes", "Index", "Edition")</li>
-                        <li><a href="#">Convocatorías</a></li>
+                        <li>@Html.ActionLink("Convocatorias", "Index", "Announcement")</li>
                         <li>@Html.ActionLink("Eventos", "Index", "Event")</li>
                         <li><a href="#">Contáctanos</a></li>
                         <li><a href="#">Materiales</a></li>
@@ -45,8 +43,11 @@
                 <div class="site-footer__col-one">
                     <h1 class="school-logo-text school-logo-text--alt-color"><a href="#"><strong>Revista</strong> Jurídica</a></h1>
                     <p>
-                        <a class="site-footer__link" href="#">(787)751-1912 #2078</a>
-                        <a class="site-footer__link" href="#">(787)751-1912 #2078</a>
+                        <a class="site-footer__link" href="#">
+                            <span>
+                                <i class="fas fa-phone"></i>
+                            </span>
+                            (787)751-1912  #2078</a>
                     </p>
                 </div>
 
@@ -76,8 +77,9 @@
                     <h3 class="headline headline--small">Síguenos</h3>
                     <nav>
                         <ul class="min-list social-icons-list group">
-                            <li><a href="#" class="social-color-facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                            <li><a href="#" class="social-color-instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                            
+                            <li><a href="https://www.facebook.com/revistajuridicainter/" class="social-color-facebook"><span><i class="fa facebook-square"></i></span></a></li>
+                            <li><a href="#" class="social-color-instagram"><span class="fa fa-instagram"></span></a></li>
                         </ul>
                     </nav>
                 </div>

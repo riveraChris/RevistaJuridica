@@ -13,6 +13,9 @@
     </div>
 
     <div class="container container--narrow page-section">
+        <div class="metabox metabox--position-up metabox--with-home-link">
+            <p><a class="metabox__blog-home-link" href="@Url.Action("Index", "Home")"><i class="fa fa-home" aria-hidden="true"></i> Regresar</a> <span class="metabox__main"> Listado de Volúmenes</span></p>
+        </div>
         <div id="accordion">
             @foreach (var edition in Model)
             {
@@ -24,7 +27,7 @@
                             </button>
                         </h5>
                     </div>
-                    <div id="collapse-@edition.Title" class="collapse" aria-labelledby="heading-@edition.Title" data-parent="#accordion">
+                    <div id="collapse-@edition.Title" class="collapse show" aria-labelledby="heading-@edition.Title" data-parent="#accordion">
                         @{ if (@edition.Numbers != null)
                             {
                                 foreach (var number in edition.Numbers)
@@ -47,7 +50,7 @@
                                                     {
                                                         <tr>
                                                             <th scope="row">
-                                                            <a href="#"><span><i class="fas fa-file-pdf"></i></span></a>
+                                                                <a href="#"><span><i class="fas fa-file-pdf"></i></span></a>
                                                             </th>
                                                             <td>@article.Title</td>
                                                             <td>@article.Description</td>
@@ -64,6 +67,7 @@
                         }
                     </div>
                 </div>
+                <br />
             }
         </div>
     </div>

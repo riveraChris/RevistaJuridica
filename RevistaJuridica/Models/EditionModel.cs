@@ -15,6 +15,7 @@ namespace RevistaJuridica.Models
         [Required]
         public int Year { get; set; }
 
+        [Write(false)]
         public ICollection<Number> Numbers { get; set; }
 
         public void setAllEditionNumbers(List<Number> n)

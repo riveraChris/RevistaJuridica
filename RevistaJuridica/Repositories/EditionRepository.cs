@@ -44,7 +44,7 @@ namespace RevistaJuridica.Repositories
                 foreach(var number in edition.Numbers)
                 {
                     var selectArticle = _db.Query<Article>("select * from dbo.Article where NumberId=" + number.Id).ToList();
-                    number.setAllNumberArticles(selectArticle);
+                    number.SetAllNumberArticles(selectArticle);
                 }
             }
 

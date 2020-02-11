@@ -11,19 +11,38 @@
     <title>Edit Event</title>
 </head>
 <body>
-    @using (Html.BeginForm("Edit", "Event", FormMethod.Post))
+ 
+
+
+    <h2>Basic File Upload</h2>
+    @using (Html.BeginForm("Edit",
+                         "Event",
+                         FormMethod.Post,
+                         new { enctype = "multipart/form-data" }))
     {
-    <fieldset>
-        <legend>Event</legend>
-        <div>@Html.EditorFor(model => model.EventId)</div>
-        <div>@Html.LabelFor(model => model.Name)</div>
-        <div>@Html.EditorFor(model => model.Name)</div>
-        <div>@Html.LabelFor(model => model.Description)</div>
-        <div>@Html.EditorFor(model => model.Description)</div>
-        <hr />
-        <input type="submit" value="Save" />
-    </fieldset>
-        
+<fieldset>
+    <legend>Event</legend>
+    <div>@Html.EditorFor(model => model.Id)</div>
+    <div>@Html.LabelFor(model => model.Name)</div>
+    <div>@Html.EditorFor(model => model.Name)</div>
+    <div>@Html.LabelFor(model => model.Description)</div>
+    <div>@Html.EditorFor(model => model.Description)</div>
+    <div>@Html.LabelFor(model => model.EventDate)</div>
+    <div>@Html.EditorFor(model => model.EventDate)</div>
+    <div>@Html.LabelFor(model => model.IsDefault)</div>
+    <div>@Html.EditorFor(model => model.IsDefault)</div>
+    <div>@Html.LabelFor(model => model.Location)</div>
+    <div>@Html.EditorFor(model => model.Location)</div>
+    <div>@Html.LabelFor(model => model.EventLink)</div>
+    <div>@Html.EditorFor(model => model.EventLink)</div>
+    <hr />
+    <br />
+</fieldset>
+        <label for="file">Upload Image:</label>
+        <input type="file" name="file" id="file" /><br><br>
+        <input type="submit" value="Upload Image" />
+        <br><br>
+        @ViewBag.Message
     }
 
 </body>

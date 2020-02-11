@@ -92,6 +92,7 @@
     <Folder Include="Documents\" />
     <Folder Include="Documents\Events\" />
     <Folder Include="Documents\Articles\" />
+    <Folder Include="Views\Announcement\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
@@ -113,6 +114,10 @@
     <Compile Include="Controllers\EditionController.cs" />
     <Compile Include="Repositories\NumberRepository.cs" />
     <Compile Include="Models\DocumentModel.cs" />
+    <Compile Include="Repositories\DocumentRepository.cs" />
+    <Compile Include="Models\AnnouncementModel.cs" />
+    <Compile Include="Repositories\AnnouncementRepository.cs" />
+    <Compile Include="Controllers\AnnouncementController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Web.config" />
@@ -295,6 +300,12 @@
     <Content Include="Resources\DataTables\datatables.js" />
     <Content Include="Resources\DataTables\datatables.min.css" />
     <Content Include="Resources\DataTables\datatables.min.js" />
+    <Content Include="Resources\images\Eventos.jpg" />
+    <Content Include="Views\Event\Details.cshtml" />
+    <Content Include="Documents\Events\PROMESA.jpg" />
+    <Content Include="Resources\images\Ca2.jpg" />
+    <Content Include="Resources\images\Ca3.jpg" />
+    <Content Include="Views\Announcement\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\.DS_Store" />

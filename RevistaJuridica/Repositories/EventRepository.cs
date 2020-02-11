@@ -30,6 +30,19 @@ namespace RevistaJuridica.EventRepositories
             return _db.Get<Event>(id);
         }
 
+        public Document GetEventImage(long id)
+        {
+            return _db.Query<Document>("sp_GetEventDocument @EventId=" + id).FirstOrDefault();
+        }
+
+        public Event GetEventWithImage(long id)
+        {
+            var e = _db.Get<Event>(id);
+            e.setEventImage(GetEventImage(e.Id));
+
+            return e;
+        }
+
         public long InsertEvent(Event e)
         {
             return _db.Insert<Event>(e);

@@ -1,0 +1,59 @@
+﻿@model List<RevistaJuridica.Models.Announcement>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<body>
+    <div class="page-banner">
+        <div class="page-banner__bg-image" style="background-image: url(Resources/images/Eventos.jpg);"></div>
+        <div class="page-banner__content container container--narrow">
+            <h1 class="page-banner__title">Convocatorias</h1>
+            <div class="page-banner__intro">
+            </div>
+        </div>
+    </div>
+
+    <div class="container container--narrow page-section">
+
+        <div class="metabox metabox--position-up metabox--with-home-link">
+            <p><a class="metabox__blog-home-link" href="@Url.Action("Index", "Home")"><i class="fa fa-home" aria-hidden="true"></i> Regresar</a> <span class="metabox__main"> Convocatorias</span></p>
+        </div>
+        <br />
+        @foreach (var item in Model)
+        {
+            <div class="event-summary">
+                <a class="event-summary__date t-center" href="@Url.Action("Details", "Announcement", new { id=item.Id })" style="background-color:#01803D;">
+                    <span class="event-summary__month">@item.AnnouncementDate.ToString("MMM")</span>
+                    <span class="event-summary__day">@item.AnnouncementDate.ToString("dd")</span>
+                </a>
+                <div class="event-summary__content" style="color:#01803D;">
+                    <h5 class="event-summary__title headline headline--tiny"><a href="@Url.Action("Details", "Announcement", new { id=item.Id })" style="color:#024B25;">@item.Title</a></h5>
+                    <p>
+                        @{ if (item.Description.Length > 200)
+                            {
+                                @item.Description.Substring(0, 200)
+                                <a href="@Url.Action("Details", "Announcement", new { id=item.Id })" class="nu gray"> ...Ver mas.</a>
+                            }
+                            else
+                            {
+                                @item.Description
+
+                            }
+                        }
+                    </p>
+                    <p>
+                        <span>
+                            <i class="fas fa-clock"></i>
+                        </span>
+                        @item.AnnouncementDate.ToString("dd MMM yyyy hh:mm tt")
+                    </p>
+                </div>
+            </div>
+            <hr />
+        }
+    </div>
+</body>
+
+
+
+

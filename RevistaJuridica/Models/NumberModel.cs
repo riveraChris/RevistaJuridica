@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Dapper.Contrib.Extensions;
 
@@ -21,9 +20,10 @@ namespace RevistaJuridica.Models
         [Required]
         public Edition Edition { get; set; }
 
+        [Write(false)]
         public ICollection<Article> Articles { get; set; }
 
-        public void setAllNumberArticles(List<Article> a)
+        public void SetAllNumberArticles(List<Article> a)
         {
             Articles = a;
         }
